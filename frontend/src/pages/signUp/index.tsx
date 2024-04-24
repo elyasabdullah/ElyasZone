@@ -43,7 +43,7 @@ const SignUp = () => {
         username: data.username,
         _id: data._id
       }))
-      navigate('/');
+      navigate('/login');
     }
   }, [error, isSuccess, data])
 
