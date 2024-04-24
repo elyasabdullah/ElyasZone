@@ -13,7 +13,7 @@ const Service = (props:Iprops) => {
   const serviceId = useSelector((state:RootState) => state.service.serviceId);
 
   const {data, isLoading, refetch} = useGetServiceQuery({serviceId: serviceId});
-  
+
   return (
     <div className="serviceContainer">
       <div className={`interalServiceContainer ${theme}`}>
@@ -22,21 +22,21 @@ const Service = (props:Iprops) => {
             Description:
           </div>
           <p className="text">
-            {data.description}
+            {data?.description}
           </p>
         </div>
         <div className={`box ${theme}`}>
           <span className={`desTitle ${theme}`}>
             Service provider name: </span>
           <span className="text">
-            {data.author}
+            {data?.author}
           </span>
         </div>
         <div className={`box ${theme}`}>
           <span className={`desTitle ${theme}`}>
             Date created: </span>
           <span className="text">
-            {data.dateCreated.slice(0, 9)}
+            {data?.dateCreated.slice(0, 9)}
           </span>
         </div>
         <div className={`box contactInfo ${theme}`}>
@@ -44,7 +44,7 @@ const Service = (props:Iprops) => {
             Contact Info: 
           </div>
           <p className="text">
-            {data.contactInfo}
+            {data?.contactInfo}
           </p>
         </div>
       </div>
