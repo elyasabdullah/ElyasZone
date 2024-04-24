@@ -1,0 +1,15 @@
+{
+  "name": "elyaszone",
+  "version": "1.0.0",
+  "description": "I will change it later on",
+  "main": "index.js",
+  "scripts": {
+    "install-server": "cd backend && npm install",
+    "start-server": "cd backend && node server.js",
+    "install-client": "cd frontend && npm install",
+    "build-client": "cd frontend && npm run dev",
+    "start-client": "cd frontend && npm run dev"
+  },
+  "author": "",
+  "license": "ISC"
+}
