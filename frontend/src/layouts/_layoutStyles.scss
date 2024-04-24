@@ -1,0 +1,18 @@
+@use './components/headerFooterStyles' as *;
+@use '../styles/mixins' as *;
+
+.mainContainer {
+  @include columnFlexBox;
+  justify-content: space-between;
+  min-height:100vh;
+}
+.secondaryContainer {
+  padding:1rem 2rem;
+  width:100%;
+  @media(min-width:1500px) {
+    width:1470px;
+  }
+  @media(max-width:400px)  {
+    padding:1rem;
+  }
+}

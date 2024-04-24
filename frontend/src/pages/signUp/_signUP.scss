@@ -1,0 +1,28 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/colors" as *;
+
+.signUpContainer {
+  display:flex;
+  justify-content:center;
+  margin:4rem 0;
+
+  .internalsignUpContainer {
+    width:380px;
+    border:2px solid;
+    border-radius:4px;
+    padding:2rem;
+    &.theme1 {
+      border-color:var(--theme1-main-color);
+    } 
+    &.theme2 {
+      border-color:var(--theme2-main-color);
+    } 
+    &.theme3 {
+      border-color:var(--theme3-main-color);
+    }
+    @media(max-width:420px) {
+      width:80vw;
+      padding:2rem;
+    }
+  }
+}

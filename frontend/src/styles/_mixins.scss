@@ -1,0 +1,25 @@
+@mixin rowFlexBox {
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+
+@mixin columnFlexBox {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin textlinearGradient($direction, $colorOne, $colorOnePer, $colorTwo, $colorTwoPer ) {
+  background-image: linear-gradient($direction, $colorOne $colorOnePer, $colorTwo $colorTwoPer);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+@mixin bgLinearGradient($direction, $colorOne, $colorOnePer, $colorTwo, $colorTwoPer) {
+  background-image: linear-gradient($direction, $colorOne $colorOnePer, $colorTwo $colorTwoPer);
+}

@@ -1,0 +1,62 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/colors" as *;
+
+.serviceContainer {
+  margin:5rem 0 3rem;
+  @include rowFlexBox;
+  .interalServiceContainer {
+    width:70vw;
+    border-radius:var(--main-border-radius);
+    &.theme1 {
+      box-shadow:0px 0px 5px var(--theme1-main-color)
+    }
+    &.theme2 {
+      box-shadow:0px 0px 5px var(--theme2-main-color)
+    }
+    &.theme3 {
+      box-shadow:0px 0px 5px var(--theme3-main-color)
+    }
+    .box {
+      padding:1rem;
+      &:not(.contactInfo).theme1 {
+        border-bottom:1px solid var(--theme1-main-color)
+      }
+      &:not(.contactInfo).theme2 {
+        border-bottom:1px solid var(--theme2-main-color)
+      }
+      &:not(.contactInfo).theme2 {
+        border-bottom:1px solid var(--theme2-main-color)
+      }
+      div.desTitle {
+        margin-bottom:0.3rem;
+        &.theme1 {
+          color:var(--theme1-main-color)
+        }
+        &.theme2 {
+          color:var(--theme2-main-color)
+        }
+        &.theme2 {
+          color:var(--theme2-main-color)
+        }
+      }
+      p.text {
+        margin-left:2rem;
+        opacity:0.9;
+      }
+      span.desTitle {
+        &.theme1 {
+          color:var(--theme1-main-color)
+        }
+        &.theme2 {
+          color:var(--theme2-main-color)
+        }
+        &.theme2 {
+          color:var(--theme2-main-color)
+        }
+      }
+      span.text {
+        opacity:0.9;
+      }
+    }
+  }
+}

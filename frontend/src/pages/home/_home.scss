@@ -1,0 +1,80 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/colors" as *;
+
+.homeContainer {
+  padding-bottom:1.5rem;
+  @include columnFlexBox;
+  h2 {
+    text-align:center;
+    font-size:2.5rem;
+    line-height:1;
+    padding:0 5rem;
+    margin:3rem 0 2rem;
+    width:840px;
+    span.theme1 {
+      color:var(--theme1-main-color)
+    }
+    span.theme2 {
+      color:var(--theme2-main-color)
+    }
+    span.theme3 {
+      color:var(--theme3-main-color)
+    }
+    @media(max-width:840px) {
+      width:100%;
+      font-size:2rem;
+      padding:0 2rem;
+    }
+    @media(max-width:500px) {
+      font-size:1.5rem;
+      padding:0 1rem;
+    }
+  }
+  .servicesContainer {
+    width:100%;
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    @media(max-width:400px){
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    @media(min-width: 992px) and (max-width:1199px) {
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    }
+    @media(min-width:1200px) {
+      grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    }
+  }
+  .pagingBtnsContainer {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    padding:1rem;
+    width:100%;
+
+    button.pagingBtn {
+    background-color: inherit;
+    color:inherit;
+    cursor:pointer;
+    padding:0.5rem 1rem;
+    border-radius:2px;
+    margin:2px 0.4rem;
+    font-size:1.1rem;
+    &:hover {
+      opacity:0.8;
+      background-color: var(--secondary-bg-color);
+    }
+    &.active {
+      background-color: var(--secondary-bg-color);
+    }
+    &.theme1 {
+      border:1px solid var(--theme1-main-color)
+    }
+    &.theme2 {
+      border:1px solid var(--theme1-main-color)
+    }
+    &.theme3 {
+      border:1px solid var(--theme1-main-color)
+    }
+  }
+}
+}

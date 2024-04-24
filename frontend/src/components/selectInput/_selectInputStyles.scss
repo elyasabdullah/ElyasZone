@@ -1,0 +1,30 @@
+@use '../../styles/colors' as *;
+
+.selectContainer{
+  display:flex;
+  flex-direction:column;
+  margin-bottom:0.4rem;
+
+  select {
+    padding:0.5rem;
+    border-radius:4px;
+    outline:none;
+    &.theme1 {
+      border:2px solid var(--theme1-main-color);
+    }
+    &.theme2 {
+      border:2px solid var(--theme2-main-color);
+    }
+    &.theme3 {
+      border:2px solid var(--theme3-main-color);
+    }
+    font-size:1.1rem;
+    margin:0.3rem 0;
+    cursor:pointer;
+  }
+  label {
+    opacity:0.8;
+  }
+}
+
+

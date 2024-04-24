@@ -1,0 +1,23 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/colors" as *;
+
+button.btn {
+  margin:0.5rem 0;
+  margin-right:0.5rem;
+  border-radius:var(--main-border-radius);
+  font-size:1.1rem;
+  padding:0.5rem 1rem;
+  color:white;
+  &:hover {
+    opacity:0.8;
+  }
+  &.theme1 {
+    @include bgLinearGradient (to left, var(--theme1-main-color), 0%, var(--theme1-secondary-color), 100%);
+  }
+  &.theme2 {
+    @include bgLinearGradient (to left, var(--theme2-main-color), 0%, var(--theme2-secondary-color), 100%);
+  }
+  &.theme3 {
+    @include bgLinearGradient (to left, var(--theme3-main-color), 0%, var(--theme3-secondary-color), 100%);
+  }
+}

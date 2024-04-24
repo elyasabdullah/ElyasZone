@@ -1,0 +1,29 @@
+@use "../../styles/colors" as *;
+@use "../../styles/mixins" as *;
+
+.textInputContainer {
+  @include columnFlexBox;
+  align-items:normal;
+  margin-bottom:0.4rem;
+  textarea {
+    padding:0.5rem;
+    border-radius:4px;
+    outline:none;
+    font-size:1.1rem;
+    margin:0.3rem 0;
+    border-width:2px;
+    border-style: solid;
+    &.theme1 {
+      border-color:var(--theme1-main-color);
+    } 
+    &.theme2 {
+      border-color:var(--theme2-main-color);
+    } 
+    &.theme3 {
+      border-color:var(--theme3-main-color);
+    } 
+  }
+  .inputLabel {
+    opacity:0.8;
+  }
+}
