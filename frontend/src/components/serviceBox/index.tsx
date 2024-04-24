@@ -4,6 +4,8 @@ import { AppContext } from "src/AppLoader";
 import { setFormService } from "src/state/service";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { RootState } from "src/state/store";
 
 interface Iprops {
   data: {
@@ -15,18 +17,24 @@ interface Iprops {
   }
 }
 const ServiceBox = (props: Iprops) => {
-  const {theme} = useContext(AppContext);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const {theme} = useContext(AppContext);
+  const isAuthenticated = useSelector((state:RootState) => state.user.isAuthenticated);
+
   const handleMoreInfo = () => {
-    dispatch(setFormService({
-      serviceId: props.data._id,
-      description: props.data.description,
-      type: props.data.type,
-      dateCreated: props.data.dateCreated,
-      authorName: props.data.author
-    }))
-    navigate('/service');
+    if(isAuthenticated) {
+      dispatch(setFormService({
+        serviceId: props.data._id,
+        description: props.data.description,
+        type: props.data.type,
+        dateCreated: props.data.dateCreated,
+        authorName: props.data.author
+      }))
+      navigate('/service')
+    }else {
+      navigate('/login')
+    }
   }
   return (
     <div className={`serviceBoxContainer ${theme}`}>
