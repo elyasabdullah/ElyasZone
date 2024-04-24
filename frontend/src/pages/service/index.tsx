@@ -3,24 +3,13 @@ import { AppContext } from "src/AppLoader";
 import { useSelector } from "react-redux";
 import { RootState } from "src/state/store";
 import { useGetServiceQuery } from "src/data/service";
-import { useNavigate } from "react-router-dom";
 import Loading from "src/components/Loading";
 
 interface Iprops {
   
 }
 const Service = (props:Iprops) => {
-  const navigate = useNavigate();
   const {theme} = useContext(AppContext);
-  const isAuthenticated = useSelector((state:RootState) => state.user.isAuthenticated);
-  console.log(isAuthenticated);
-  useEffect(() => {
-    if(!isAuthenticated) {
-      navigate('/login');
-    }else {
-      console.log(isAuthenticated);
-    }
-  }, [isAuthenticated])
   const serviceId = useSelector((state:RootState) => state.service.serviceId);
 
   const {data, isLoading, refetch} = useGetServiceQuery({serviceId: serviceId});
