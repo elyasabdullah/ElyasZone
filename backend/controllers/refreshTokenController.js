@@ -4,7 +4,13 @@ const jwt = require('jsonwebtoken');
 const handleRefreshToken = async (req, res) => {
     const refreshToken = req.cookies.jwt;
     
-    if (!refreshToken) return res.sendStatus(401);
+    if (!refreshToken) {
+        const cookie = req.headers.cookie;
+        refreshToken = cookie && cookie.split('jwt=')[1];
+        if(!refreshToken) {
+            return res.sendStatus(401);
+        }
+    }
 
     const foundUser = await User.findOne({ refreshToken: refreshToken }).exec();
     if (!foundUser) return res.sendStatus(403);
