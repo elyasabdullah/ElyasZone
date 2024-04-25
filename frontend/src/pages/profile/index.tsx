@@ -61,14 +61,15 @@ const Profile = () => {
       )
     })
   }else {
-    element = <h3
-      style={{fontSize: '1.5rem', padding: '1.5rem 0'}}
-    >You don't have services yet!</h3>
+    if(isLoading) {
+      element = <Loading />
+    }else {
+      element = <h3
+        style={{fontSize: '1.5rem', padding: '1.5rem 0'}}
+      >You don't have services yet!</h3>
+    }
   }
 
-  // if(isLoading) {
-  //   return <Loading />
-  // }
 
   useEffect(() => {
     refetch();
