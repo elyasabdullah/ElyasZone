@@ -64,8 +64,6 @@ const AppLoader = () => {
         dispatch(setAuthenticated(true));
       }else {
         dispatch(setAuthenticated(false));
-        dispatch(logout());
-        navigate('/login');
       }
     }
     const asyncFunc = async () => {
