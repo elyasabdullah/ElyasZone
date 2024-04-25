@@ -6,6 +6,7 @@
   margin:1rem;
   box-shadow:Inset 0px 0px 2px #000, 0px 0px 40px #000;
   border-radius:var(--main-border-radius);
+  overflow: auto;
   .internalContainer {
 
     .description {
