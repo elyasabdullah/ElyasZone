@@ -32,14 +32,15 @@ const Home = (props: Iprops) => {
       )
     })
   }else {
-    element = <h3
+    if(isLoading) {
+      element = <Loading />
+    }else {
+      element = <h3
       style={{fontSize: '1.5rem', padding: '1.5rem 0'}}
-    >There aren't services yet!</h3>
+    >There aren't services!</h3>
+    }
   }
   
-  // if(isLoading) {
-  //   return <Loading />
-  // }
 
   const handlePaging = (page: number) => {
     setPageNumber(page);
