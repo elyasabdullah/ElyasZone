@@ -10,8 +10,8 @@ type props = {
 const useLogin = ({onSubmitForm, initialState}: props) => {
 
   const loginScheme = Yup.object({
-    username: Yup.string().trim().required("Username is required"), 
-    password: Yup.string().trim().required("your password is required"),
+    username: Yup.string().trim('Username can not start or end with spaces').required("Username is required"), 
+    password: Yup.string().trim('Password can not start or end with spaces').required("your password is required"),
   })
 
   const formik = useFormik<Partial<LoginRequest>>({
@@ -35,6 +35,11 @@ const useLogin = ({onSubmitForm, initialState}: props) => {
   }
 
   const onSubmit = () => {
+    const { username, password } = formik.values;
+    formik.setValues({
+      username: username?.trim(),
+      password: password?.trim(),
+    });
     formik.handleSubmit();
   }
   
