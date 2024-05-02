@@ -29,7 +29,6 @@ To run SimplifyMe locally, follow these steps:
   - ACCESS_TOKEN_SECRET
   - REFRESH_TOKEN_SECRET
   - DATABASE_URI
-  - EMAIL_FROM
 ### Running the frontend
 - Navigate to the project directory: `cd ElyasZone/frontend`
 - Install dependencies frontend: `npm install`
