@@ -1,4 +1,4 @@
-# SimplifyMe
+# ElyasZone
 
 ElyasZone is a website that allow users to post their services to clients and also allow them 
 see other’s services in the platform.
