@@ -56,6 +56,7 @@
     @include rowFlexBox;
     position:relative;
     .headerLinks {
+      z-index:100;
       @include rowFlexBox;
       & :last-child .link {
         background-color:var(--secondary-bg-color);
